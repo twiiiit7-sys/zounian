@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ | 雑煮庵</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/shared-ui.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="contact-page">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__brand" href="/" aria-label="雑煮庵 トップへ">
+        <img class="site-header__logo-image" src="/assets/logo-zounian.png" alt="雑煮庵 ZOUNIAN">
+      </a>
+      <nav class="site-header__nav" aria-label="メインナビゲーション">
+        <a class="site-header__nav-link" href="/concept/">コンセプト</a>
+        <a class="site-header__nav-link" href="/guide/">体験・ストーリー</a>
+        <a class="site-header__nav-link" href="/menu/">メニュー</a>
+        <a class="site-header__nav-link" href="/news/">お知らせ</a>
+        <a class="site-header__nav-link" href="/store/">店舗情報</a>
+      </nav>
+      <div class="site-header__actions">
+        <a class="site-header__reserve reserve-button" href="/reserve/">予約する</a>
+        <button class="site-header__menu-button" type="button" aria-label="メニューを開く" aria-expanded="false">
+          <span class="site-header__menu-line"></span>
+          <span class="site-header__menu-line"></span>
+          <span class="site-header__menu-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-hero" aria-labelledby="hero-title">
+      <div class="contact-hero__copy">
+        <p class="contact-hero__label">Contact</p>
+        <h1 id="hero-title">お問い合わせ</h1>
+        <p>ご予約・体験内容・取材などについて、<br>お気軽にお問い合わせください。</p>
+      </div>
+      <figure class="contact-hero__visual">
+        <img src="assets/contact_hero_ozoni.png" alt="木盆に置かれた湯気の立つ雑煮">
+      </figure>
+    </section>
+
+    <section class="contact-panel" aria-label="お問い合わせ">
+      <aside class="contact-card contact-card--info">
+        <article class="info-item">
+          <span class="info-item__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 7h5v6H6z"/><path d="M13 7h5v10H6v-3"/><path d="M9 17v3M15 17v3"/></svg></span>
+          <div>
+            <h2>お問い合わせ前に</h2>
+            <p>ご予約内容の変更、体験プランのご相談、取材・撮影のご依頼などを承っております。</p>
+          </div>
+        </article>
+        <article class="info-item">
+          <span class="info-item__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></span>
+          <div>
+            <h2>営業時間</h2>
+            <p>11:00 - 22:00（L.O. 21:00）</p>
+          </div>
+        </article>
+        <article class="info-item">
+          <span class="info-item__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg></span>
+          <div>
+            <h2>所在地</h2>
+            <p>東京都渋谷区神宮前5-1-1</p>
+          </div>
+        </article>
+        <article class="info-item">
+          <span class="info-item__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12l16-7-7 16-2-7-7-2Z"/></svg></span>
+          <div>
+            <h2>返信目安</h2>
+            <p>通常、2〜3営業日以内にご返信いたします。</p>
+          </div>
+        </article>
+        <a class="faq-link" href="/guide/#faq">
+          <span>よくあるご質問もご用意しています。</span>
+          <strong>よくある質問を見る <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></strong>
+        </a>
+      </aside>
+
+      <form class="contact-card contact-form" novalidate>
+        <div class="contact-form__grid">
+          <label class="contact-form__field">お名前 <em>必須</em><input type="text" name="name" placeholder="例）山田 花子" required></label>
+          <label class="contact-form__field">メールアドレス <em>必須</em><input type="email" name="email" placeholder="例）sample@example.com" required></label>
+        </div>
+        <label class="contact-form__field">お問い合わせ種別 <em>必須</em>
+          <select name="category" required>
+            <option value="">選択してください</option>
+            <option>ご予約について</option>
+            <option>体験内容について</option>
+            <option>取材・撮影について</option>
+            <option>その他</option>
+          </select>
+        </label>
+        <label class="contact-form__field">件名 <em>必須</em><input type="text" name="subject" placeholder="例）体験の予約について" required></label>
+        <label class="contact-form__field">お問い合わせ内容 <em>必須</em><textarea name="message" placeholder="ご質問・ご要望などをご入力ください" required></textarea></label>
+        <p class="contact-form__message" aria-live="polite"></p>
+        <button class="contact-form__submit" type="submit">送信する</button>
+      </form>
+    </section>
+
+    <section class="contact-cta" aria-labelledby="cta-title">
+      <div class="contact-cta__copy">
+        <h2 id="cta-title">ご予約はオンラインでも承っています。</h2>
+        <p>季節の雑煮と、地域ごとの食文化をお楽しみください。</p>
+      </div>
+      <div class="contact-cta__actions">
+        <a class="button button--primary" href="/reserve/">予約する</a>
+        <a class="button button--outline" href="/menu/">メニューを見る <span aria-hidden="true">〉</span></a>
+      </div>
+      <figure class="contact-cta__image">
+        <img src="assets/contact_cta_ozoni.png" alt="木盆に並ぶ二つの雑煮椀">
+      </figure>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <section class="site-footer__brand" aria-label="雑煮庵">
+        <img class="site-footer__logo" src="/assets/logo-zounian.png" alt="雑煮庵 ZOUNIAN">
+      </section>
+      <address class="site-footer__address">〒150-0001<br>東京都渋谷区神宮前5-1-1<br>営業時間 11:00 - 22:00（L.O. 21:00）</address>
+      <nav class="site-footer__nav" aria-label="フッターナビゲーション">
+        <a href="/concept/">コンセプト</a>
+        <a href="/guide/">体験・ストーリー</a>
+        <a href="/menu/">メニュー</a>
+        <a href="/store/">店舗情報</a>
+        <a href="/news/">お知らせ</a>
+        <a href="/guide/#faq">よくある質問</a>
+      </nav>
+      <section class="site-footer__social" aria-label="SNS">
+        <p class="site-footer__social-title">Follow Us</p>
+        <ul class="site-footer__social-list">
+          <li><a class="site-footer__social-link" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"></rect><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"></circle><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"></circle></svg></a></li>
+          <li><a class="site-footer__social-link" href="#" aria-label="X"><svg class="site-footer__x-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.24 6.93 6.07-6.93Zm-1.29 19.5h2.04L6.49 3.24H4.3l13.31 17.41Z"></path></svg></a></li>
+          <li><a class="site-footer__social-link" href="#" aria-label="Facebook"><svg class="site-footer__facebook-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.4"></circle><path d="M13.4 22v-7.2h2.4l.5-3.1h-2.9V9.7c0-.9.4-1.7 1.8-1.7h1.3V5.3s-1.2-.2-2.4-.2c-2.4 0-3.9 1.4-3.9 4.1v2.5H7.6v3.1h2.6V22"></path></svg></a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="site-footer__bottom">
+      <small class="site-footer__copyright">© ZOUNIAN. All Rights Reserved.</small>
+      <p class="site-footer__policy"><a href="/privacy/">プライバシーポリシー</a><span>|</span><a href="/terms/">利用規約</a></p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
+
+

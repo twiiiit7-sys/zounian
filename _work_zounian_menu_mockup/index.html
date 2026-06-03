@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="雑煮を中心とした和食・食文化体験サービス、雑煮庵のメニュー紹介ページ。">
+  <title>雑煮庵 | メニュー</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../zounian-common/shared-ui.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__brand" href="#" aria-label="雑煮庵 トップへ">
+        <img class="site-header__logo-image site-header__logo" src="extracted-assets/logo-zounian.png" alt="雑煮庵 ZOUNIAN">
+      </a>
+      <nav class="site-header__nav" aria-label="メインナビゲーション">
+        <a class="site-header__nav-link" href="#concept">コンセプト</a>
+        <a class="site-header__nav-link" href="#story">体験・ストーリー</a>
+        <a class="site-header__nav-link site-header__nav-link--active" href="#menu">メニュー</a>
+        <a class="site-header__nav-link" href="#news">お知らせ</a>
+        <a class="site-header__nav-link" href="#access">店舗情報</a>
+      </nav>
+      <div class="site-header__actions">
+        <a class="site-header__reserve reserve-button" href="#reserve">予約する</a>
+        <button class="site-header__menu-button" type="button" aria-label="メニューを開く" aria-expanded="false">
+          <span class="site-header__menu-line"></span>
+          <span class="site-header__menu-line"></span>
+          <span class="site-header__menu-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="concept" aria-labelledby="hero-title">
+      <div class="hero__image-wrap" aria-hidden="true">
+        <img class="hero__image" src="extracted-assets/hero-first.png" alt="">
+      </div>
+      <div class="hero__inner">
+        <div class="hero__content">
+          <p class="hero__label">MENU COLLECTION</p>
+          <h1 class="hero__title" id="hero-title">一椀ごとに、<br>土地の美意識を味わう。</h1>
+          <p class="hero__text">
+            地域ごとに異なる出汁、餅、器、しつらえ。<br>
+            雑煮庵では、料理そのものだけでなく、<br>
+            その背景にある文化まで味わえます。
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#reserve">予約する</a>
+            <a class="button button--secondary" href="#menu">メニューを見る <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-gallery" id="menu" aria-labelledby="menu-gallery-title">
+      <div class="menu-gallery__inner">
+        <header class="menu-gallery__header">
+          <h2 class="menu-gallery__title" id="menu-gallery-title">地域の記憶を映す雑煮たち</h2>
+          <p class="menu-gallery__lead">まずは写真から、気になる一椀を見つけてください。</p>
+        </header>
+        <div class="menu-gallery__grid">
+          <article class="menu-card menu-card--large">
+            <a class="menu-card__link" href="#story">
+              <img class="menu-card__image" src="extracted-assets/menu-kyoto.png" alt="京雑煮">
+              <div class="menu-card__body">
+                <h3 class="menu-card__title">京雑煮</h3>
+                <p class="menu-card__text">白味噌のまろやかさと、<br>都らしい上品さを感じる代表的な一椀。</p>
+                <span class="menu-card__tag">京都</span>
+              </div>
+            </a>
+          </article>
+          <article class="menu-card menu-card--wide menu-card--hakata">
+            <a class="menu-card__link" href="#detail">
+              <img class="menu-card__image" src="extracted-assets/menu-hakata.png" alt="博多雑煮">
+              <div class="menu-card__body">
+                <h3 class="menu-card__title">博多雑煮</h3>
+                <p class="menu-card__text">焼きあごの香りが広がる、<br>晴れやかな祝いの味。</p>
+                <span class="menu-card__tag">博多</span>
+              </div>
+            </a>
+          </article>
+          <article class="menu-card menu-card--wide menu-card--edo">
+            <a class="menu-card__link" href="#detail">
+              <img class="menu-card__image" src="extracted-assets/menu-edo.png" alt="江戸雑煮">
+              <div class="menu-card__body">
+                <h3 class="menu-card__title">江戸雑煮</h3>
+                <p class="menu-card__text">醤油仕立ての澄んだ出汁と、<br>江戸らしい粋を感じる一椀。</p>
+                <span class="menu-card__tag">江戸</span>
+              </div>
+            </a>
+          </article>
+          <article class="menu-card menu-card--small">
+            <a class="menu-card__link" href="#detail">
+              <img class="menu-card__image" src="extracted-assets/menu-tohoku.png" alt="東北雑煮">
+              <div class="menu-card__body">
+                <h3 class="menu-card__title">東北雑煮</h3>
+                <p class="menu-card__text">具だくさんで温かな、<br>土地の記憶が詰まった一椀。</p>
+                <span class="menu-card__tag">東北</span>
+              </div>
+            </a>
+          </article>
+          <article class="menu-card menu-card--small">
+            <a class="menu-card__link" href="#detail">
+              <img class="menu-card__image" src="extracted-assets/menu-kaga.png" alt="加賀雑煮">
+              <div class="menu-card__body">
+                <h3 class="menu-card__title">加賀雑煮</h3>
+                <p class="menu-card__text">凛とした出汁と上品な具材が調和する、<br>北陸らしい味わい。</p>
+                <span class="menu-card__tag">加賀</span>
+              </div>
+            </a>
+          </article>
+          <article class="menu-card menu-card--small">
+            <a class="menu-card__link" href="#detail">
+              <img class="menu-card__image" src="extracted-assets/menu-izumo.png" alt="出雲雑煮">
+              <div class="menu-card__body">
+                <h3 class="menu-card__title">出雲雑煮</h3>
+                <p class="menu-card__text">小豆のやさしい甘みを楽しむ、<br>祝いの気配をまとう一椀。</p>
+                <span class="menu-card__tag">出雲</span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="story" id="story" aria-labelledby="story-title">
+      <div class="story__inner">
+        <figure class="story__media">
+          <img class="story__image" src="extracted-assets/story-white-miso.png" alt="白味噌を仕立てる様子">
+        </figure>
+        <article class="story__content">
+          <p class="story__label">FEATURED STORY</p>
+          <h2 class="story__title" id="story-title">京都の白味噌文化</h2>
+          <p class="story__text">
+            京雑煮の特徴である白味噌仕立ては、<br>
+            都の食文化が育んだ繊細な甘みと丸みの象徴です。<br>
+            正月の祝い膳に込められた美意識を、<br>
+            料理と空間の両方から体験できます。
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="detail" id="detail" aria-labelledby="detail-title">
+      <div class="detail__inner">
+        <header class="detail__header">
+          <h2 class="detail__title" id="detail-title">一椀を、<br>もう少し深く知る</h2>
+          <p class="detail__lead">見た目だけで終わらない、<br>背景まで味わうための紹介。</p>
+        </header>
+        <div class="detail__grid">
+          <article class="detail-card">
+            <img class="detail-card__image" src="extracted-assets/detail-vessel.png" alt="器">
+            <div class="detail-card__body">
+              <h3 class="detail-card__title">器</h3>
+              <p class="detail-card__text">地域ごとに受け継がれる器の美しさと機能。</p>
+              <a class="detail-card__link" href="#">詳しく見る <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="detail-card">
+            <img class="detail-card__image" src="extracted-assets/detail-dashi.png" alt="出汁">
+            <div class="detail-card__body">
+              <h3 class="detail-card__title">出汁</h3>
+              <p class="detail-card__text">出汁の取り方や素材の違いが、味わいを大きく変える。</p>
+              <a class="detail-card__link" href="#">詳しく見る <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="detail-card">
+            <img class="detail-card__image" src="extracted-assets/detail-mochi.png" alt="餅">
+            <div class="detail-card__body">
+              <h3 class="detail-card__title">餅</h3>
+              <p class="detail-card__text">形や焼き方の違いが生む、食感と風味の個性。</p>
+              <a class="detail-card__link" href="#">詳しく見る <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="detail-card">
+            <img class="detail-card__image" src="extracted-assets/detail-culture.png" alt="地域文化">
+            <div class="detail-card__body">
+              <h3 class="detail-card__title">地域文化</h3>
+              <p class="detail-card__text">歴史や風土が育てた、食の背景にある物語。</p>
+              <a class="detail-card__link" href="#">詳しく見る <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="reserve" aria-labelledby="cta-title">
+      <div class="cta__inner">
+        <h2 class="cta__title" id="cta-title">次の冬、<br>あなたの記憶に残る一椀を。</h2>
+        <p class="cta__text">大切な人と、静かな時間をお過ごしください。</p>
+        <a class="cta__button" href="#">ご予約・体験プランを見る <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="access">
+    <div class="site-footer__inner">
+      <section class="site-footer__brand" aria-label="雑煮庵">
+        <img class="site-footer__logo" src="extracted-assets/logo-zounian.png" alt="雑煮庵 ZOUNIAN">
+      </section>
+      <address class="site-footer__address">
+        〒150-0001<br>
+        東京都渋谷区神宮前5-1-1<br>
+        営業時間 11:00-22:00（L.O. 21:00）
+      </address>
+      <nav class="site-footer__nav" aria-label="フッターナビゲーション">
+        <a href="#concept">コンセプト</a>
+        <a href="#story">体験・ストーリー</a>
+        <a href="#menu">メニュー</a>
+        <a href="#news">お知らせ</a>
+        <a href="#access">店舗情報</a>
+      </nav>
+      <section class="site-footer__social" aria-label="SNS">
+        <p class="site-footer__social-title">Follow Us</p>
+        <ul class="site-footer__social-list">
+          <li><a class="site-footer__social-link" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1.1"></circle></svg></a></li>
+          <li><a class="site-footer__social-link" href="#" aria-label="X"><svg class="site-footer__x-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.24 6.93 6.07-6.93Zm-1.29 19.5h2.04L6.49 3.24H4.3l13.31 17.41Z"></path></svg></a></li>
+          <li><a class="site-footer__social-link" href="#" aria-label="Facebook"><svg class="site-footer__facebook-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10.4"></circle><path d="M13.4 22v-7.2h2.4l.5-3.1h-2.9V9.7c0-.9.4-1.7 1.8-1.7h1.3V5.3s-1.2-.2-2.4-.2c-2.4 0-3.9 1.4-3.9 4.1v2.5H7.6v3.1h2.6V22"></path></svg></a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="site-footer__bottom">
+      <small class="site-footer__copyright">© ZOUNIAN. All Rights Reserved.</small>
+      <p class="site-footer__policy"><a href="#">プライバシーポリシー</a><span>|</span><a href="#">利用規約</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="../zounian-common/shared-ui.js"></script>
+</body>
+</html>

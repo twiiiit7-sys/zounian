@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>予約する | 雑煮庵</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/shared-ui.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="reserve-page">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__brand" href="/" aria-label="雑煮庵 トップへ">
+        <img class="site-header__logo-image" src="assets/logo-zounian.png" alt="雑煮庵 ZOUNIAN">
+      </a>
+      <nav class="site-header__nav" aria-label="メインナビゲーション">
+        <a class="site-header__nav-link" href="/concept/">コンセプト</a>
+        <a class="site-header__nav-link" href="/guide/">体験・ストーリー</a>
+        <a class="site-header__nav-link" href="/menu/">メニュー</a>
+        <a class="site-header__nav-link" href="/news/">お知らせ</a>
+        <a class="site-header__nav-link" href="/store/">店舗情報</a>
+      </nav>
+      <div class="site-header__actions">
+        <a class="site-header__reserve reserve-button site-header__reserve--active" href="/reserve/#reservation">予約する</a>
+        <button class="site-header__menu-button" type="button" aria-label="メニューを開く" aria-expanded="false">
+          <span class="site-header__menu-line"></span>
+          <span class="site-header__menu-line"></span>
+          <span class="site-header__menu-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__copy">
+        <p class="section-kicker">オンライン予約</p>
+        <h1 id="hero-title">予約する一椀を、<br>選ぶ。</h1>
+        <p>季節の恵みと、地域の文化を味わう特別な体験。<br>ご希望のコースと日時をお選びください。</p>
+      </div>
+      <figure class="hero__visual">
+        <img src="assets/reserve-hero.png" alt="赤漆椀に盛られた焼き餅入り雑煮">
+      </figure>
+    </section>
+
+    <form class="booking" id="reservation">
+      <section class="booking__step booking__step--course" aria-labelledby="course-title">
+        <div class="step-head"><span>01</span><div><h2 id="course-title">コースを選ぶ</h2><p>お好みの体験コースをお選びください。</p></div></div>
+        <div class="course-list">
+          <button class="course-card is-selected" type="button" data-course="季節の雑煮コース" data-price="8800">
+            <img src="assets/course-seasonal.png" alt="季節の雑煮コース">
+            <strong>季節の雑煮コース</strong>
+            <p>季節の恵みを味わう基本コース。</p>
+            <span><img src="assets/icon-duration.svg" alt="">約90分 <b>¥8,800<small>（税込）</small></b></span>
+          </button>
+          <button class="course-card" type="button" data-course="贅沢雑煮コース" data-price="15000">
+            <img src="assets/course-premium.png" alt="贅沢雑煮コース">
+            <strong>贅沢雑煮コース</strong>
+            <p>特別な食材を使用したコース。</p>
+            <span><img src="assets/icon-duration.svg" alt="">約120分 <b>¥15,000<small>（税込）</small></b></span>
+          </button>
+          <button class="course-card" type="button" data-course="文化体験付きコース" data-price="18500">
+            <img src="assets/course-culture.png" alt="文化体験付きコース">
+            <strong>文化体験付きコース</strong>
+            <p>器・空間体験が含まれるコース。</p>
+            <span><img src="assets/icon-duration.svg" alt="">約150分 <b>¥18,500<small>（税込）</small></b></span>
+          </button>
+        </div>
+        <a class="text-link" href="/menu/">すべてのコースを見る <span aria-hidden="true">→</span></a>
+      </section>
+
+      <section class="booking__step booking__step--calendar" aria-labelledby="date-title">
+        <div class="step-head"><span>02</span><div><h2 id="date-title">日時を選ぶ</h2><p>ご希望の日時をお選びください。</p></div></div>
+        <div class="calendar">
+          <div class="calendar__head"><button type="button" aria-label="前月">‹</button><strong>2026年12月</strong><button type="button" aria-label="次月">›</button></div>
+          <div class="calendar__grid" aria-label="2026年12月">
+            <span>日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span>
+            <button type="button">30</button><button type="button">1</button><button type="button">2</button><button type="button">3</button><button type="button">4</button><button type="button">5</button><button type="button">6</button>
+            <button type="button">7</button><button type="button">8</button><button type="button">9</button><button type="button">10</button><button type="button">11</button><button type="button" class="is-selected">12</button><button type="button">13</button>
+            <button type="button">14</button><button type="button">15</button><button type="button">16</button><button type="button">17</button><button type="button">18</button><button type="button">19</button><button type="button">20</button>
+            <button type="button">21</button><button type="button">22</button><button type="button">23</button><button type="button">24</button><button type="button">25</button><button type="button">26</button><button type="button">27</button>
+            <button type="button">28</button><button type="button">29</button><button type="button">30</button><button type="button">31</button><button type="button" class="is-muted">1</button><button type="button" class="is-muted">2</button><button type="button" class="is-muted">3</button>
+          </div>
+        </div>
+        <h3>時間を選ぶ</h3>
+        <div class="time-list">
+          <button type="button">11:00</button>
+          <button type="button">13:00</button>
+          <button type="button" class="is-selected">17:00</button>
+          <button type="button">19:00</button>
+        </div>
+      </section>
+
+      <section class="booking__step booking__step--people" aria-labelledby="people-title">
+        <div class="step-head"><span>03</span><div><h2 id="people-title">人数を選ぶ</h2><p>ご利用人数をお選びください。</p></div></div>
+        <div class="people-control">
+          <button type="button" id="minus" aria-label="人数を減らす">−</button>
+          <strong><span id="guestCount">2</span><small>名様</small></strong>
+          <button type="button" id="plus" aria-label="人数を増やす">＋</button>
+        </div>
+        <p class="note">1〜8名様までご利用いただけます</p>
+      </section>
+
+      <section class="booking__step booking__step--summary" aria-labelledby="summary-title">
+        <div class="step-head"><span>04</span><div><h2 id="summary-title">予約内容</h2><p>選択内容をご確認ください。</p></div></div>
+        <img class="summary-image" src="assets/reservation-summary-room.png" alt="和モダンの個室席">
+        <dl class="summary-list">
+          <div><dt>コース</dt><dd id="summaryCourse">季節の雑煮コース</dd></div>
+          <div><dt>日時</dt><dd>2026年12月12日（金）17:00</dd></div>
+          <div><dt>人数</dt><dd><span id="summaryGuests">2</span>名様</dd></div>
+          <div><dt>合計料金</dt><dd class="summary-list__price">¥<span id="summaryPrice">17,600</span><small>（税込）</small></dd></div>
+        </dl>
+      </section>
+
+      <section class="booking__step booking__step--form" aria-labelledby="form-title">
+        <div class="step-head"><span>05</span><div><h2 id="form-title">お客様情報の入力</h2><p>ご連絡先をご入力ください。</p></div></div>
+        <div class="guest-form">
+          <label>お名前<input type="text" placeholder="例）山田 太郎"></label>
+          <label>メールアドレス<input type="email" placeholder="例）yamada@example.com"></label>
+          <label>電話番号<input type="tel" placeholder="例）090-1234-5678"></label>
+          <label>ご要望・アレルギーなど（任意）<textarea placeholder="ご要望・アレルギーがありましたらご記入ください"></textarea></label>
+        </div>
+      </section>
+
+      <section class="booking__step booking__step--confirm" aria-labelledby="confirm-title">
+        <div class="step-head"><span>06</span><div><h2 id="confirm-title">予約を確定する</h2><p>内容をご確認のうえ、この内容で予約するボタンを押してください。</p></div></div>
+        <button class="submit-button" type="button">この内容で予約する</button>
+        <p class="confirm-note">※ 予約確定後、確認メールをお送りします。<br>※ キャンセルポリシーは店舗情報ページをご確認ください。</p>
+      </section>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <section class="site-footer__brand" aria-label="雑煮庵">
+        <img class="site-footer__logo" src="assets/logo-zounian.png" alt="雑煮庵 ZOUNIAN">
+      </section>
+      <address class="site-footer__address">〒150-0001<br>東京都渋谷区神宮前5-1-1<br>11:00 - 22:00（L.O. 21:00）</address>
+      <nav class="site-footer__nav" aria-label="フッターナビゲーション">
+        <a href="/concept/">コンセプト</a>
+        <a href="/guide/">体験・ストーリー</a>
+        <a href="/menu/">メニュー</a>
+        <a href="/news/">お知らせ</a>
+        <a href="/store/">店舗情報</a>
+      </nav>
+      <section class="site-footer__social" aria-label="SNS">
+        <p class="site-footer__social-title">Follow Us</p>
+        <ul class="site-footer__social-list">
+          <li><a class="site-footer__social-link" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"></rect><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"></circle><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"></circle></svg></a></li>
+          <li><a class="site-footer__social-link" href="#" aria-label="X"><svg class="site-footer__x-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.24 6.93 6.07-6.93Zm-1.29 19.5h2.04L6.49 3.24H4.3l13.31 17.41Z"></path></svg></a></li>
+          <li><a class="site-footer__social-link" href="#" aria-label="Facebook"><svg class="site-footer__facebook-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.4"></circle><path d="M13.4 22v-7.2h2.4l.5-3.1h-2.9V9.7c0-.9.4-1.7 1.8-1.7h1.3V5.3s-1.2-.2-2.4-.2c-2.4 0-3.9 1.4-3.9 4.1v2.5H7.6v3.1h2.6V22"></path></svg></a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="site-footer__bottom">
+      <small class="site-footer__copyright">© ZOUNIAN. All Rights Reserved.</small>
+      <p class="site-footer__policy"><a href="/privacy/">プライバシーポリシー</a><span>|</span><a href="/terms/">利用規約</a></p>
+    </div>
+  </footer>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
+
+
+

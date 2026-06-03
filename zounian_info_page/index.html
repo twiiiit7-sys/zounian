@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お知らせ | 雑煮庵</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../zounian-common/shared-ui.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="info-page">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__brand" href="../zounian-top/index.html" aria-label="雑煮庵 トップへ">
+        <img class="site-header__logo-image" src="../zounian-top/assets/logo-zounian.png" alt="雑煮庵 ZOUNIAN">
+      </a>
+      <nav class="site-header__nav" aria-label="メインナビゲーション">
+        <a class="site-header__nav-link" href="../zounian-concept/index.html">コンセプト</a>
+        <a class="site-header__nav-link" href="../zounian-guide-page/index.html">体験・ストーリー</a>
+        <a class="site-header__nav-link" href="../_work_zounian_menu_mockup/index.html">メニュー</a>
+        <a class="site-header__nav-link site-header__nav-link--active" href="index.html">お知らせ</a>
+        <a class="site-header__nav-link" href="../zounian-store-page/index.html">店舗情報</a>
+      </nav>
+      <div class="site-header__actions">
+        <a class="site-header__reserve reserve-button" href="../zounian-reserve-page/index.html">予約する</a>
+        <button class="site-header__menu-button" type="button" aria-label="メニューを開く" aria-expanded="false">
+          <span class="site-header__menu-line"></span>
+          <span class="site-header__menu-line"></span>
+          <span class="site-header__menu-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__copy">
+        <p class="section-kicker">NEWS</p>
+        <h1 class="hero__title" id="hero-title">お知らせ</h1>
+        <p class="hero__lead">季節の雑煮、店舗からのお知らせ、<br>体験イベントやメディア掲載情報をお届けします。</p>
+        <nav class="filter" aria-label="お知らせカテゴリ">
+          <a class="filter__item filter__item--active" href="#">すべて</a>
+          <a class="filter__item" href="#">季節限定</a>
+          <a class="filter__item" href="#">イベント</a>
+          <a class="filter__item" href="#">新メニュー</a>
+          <a class="filter__item" href="#">メディア</a>
+        </nav>
+      </div>
+      <figure class="hero__visual">
+        <img src="zounian_info_assets/hero-news.png" alt="障子越しの自然光に照らされた花器と梅の枝">
+      </figure>
+    </section>
+
+    <section class="featured" aria-labelledby="featured-title">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker section-kicker--line">大切なお知らせ</p>
+          <h2 class="section-title" id="featured-title">大切なお知らせ</h2>
+        </div>
+        <a class="text-link" href="#">すべて見る <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="featured__grid">
+        <article class="featured-card">
+          <img class="featured-card__image" src="zounian_info_assets/featured-event-spring-path.png" alt="春の日本庭園と石畳の小径">
+          <div class="featured-card__body">
+            <p class="meta"><time datetime="2026-04-24">2026.04.24</time><span>イベント</span></p>
+            <h3>春の体験イベントのご案内</h3>
+            <p>季節の雑煮を味わう体験イベントを開催します。</p>
+          </div>
+        </article>
+        <article class="featured-card">
+          <img class="featured-card__image" src="zounian_info_assets/featured-menu-sakura-zoni.png" alt="桜の飾りを添えた春限定の雑煮">
+          <div class="featured-card__body">
+            <p class="meta"><time datetime="2026-04-18">2026.04.18</time><span>メニュー</span></p>
+            <h3>春限定「桜雑煮」提供開始</h3>
+            <p>桜の香りと出汁のやさしさを楽しめる季節限定の一椀です。</p>
+          </div>
+        </article>
+        <article class="featured-card">
+          <img class="featured-card__image" src="zounian_info_assets/featured-media-magazine.png" alt="木製テーブルに置かれた雑誌の雑煮特集ページ">
+          <div class="featured-card__body">
+            <p class="meta"><time datetime="2026-04-10">2026.04.10</time><span>メディア</span></p>
+            <h3>メディア掲載のお知らせ</h3>
+            <p>雑誌「和の時間」に雑煮庵が紹介されました。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="news" aria-labelledby="news-title">
+      <aside class="news__aside">
+        <h2 class="section-title" id="news-title">お知らせ一覧</h2>
+        <p class="section-kicker section-kicker--small">カテゴリ</p>
+        <nav class="side-nav" aria-label="カテゴリ">
+          <a class="side-nav__item side-nav__item--active" href="#">すべて</a>
+          <a class="side-nav__item" href="#">季節限定</a>
+          <a class="side-nav__item" href="#">イベント</a>
+          <a class="side-nav__item" href="#">新メニュー</a>
+          <a class="side-nav__item" href="#">メディア</a>
+        </nav>
+        <p class="section-kicker section-kicker--small">アーカイブ</p>
+        <a class="archive-link" href="#">2024年4月 <span aria-hidden="true">▣</span></a>
+      </aside>
+      <div class="news__list">
+        <article class="news-item">
+          <img src="zounian_info_assets/news-garden-path.png" alt="日本庭園の石畳と灯籠">
+          <div class="news-item__body">
+            <p class="meta"><time datetime="2026-04-28">2026.04.28</time><span>季節限定</span></p>
+            <h3>ゴールデンウィークの営業について</h3>
+            <p>ゴールデンウィーク期間の営業案内についてお知らせいたします。</p>
+          </div>
+          <a class="news-item__arrow" href="#" aria-label="ゴールデンウィークの営業についてを読む">→</a>
+        </article>
+        <article class="news-item">
+          <img src="zounian_info_assets/news-dashi-workshop.png" alt="和食職人が鍋へ出汁を注ぐ場面">
+          <div class="news-item__body">
+            <p class="meta"><time datetime="2026-04-21">2026.04.21</time><span>イベント</span></p>
+            <h3>出汁の引き方を学ぶワークショップを開催しました</h3>
+            <p>先日開催したワークショップの様子をレポートします。</p>
+          </div>
+          <a class="news-item__arrow" href="#" aria-label="出汁ワークショップの記事を読む">→</a>
+        </article>
+        <article class="news-item">
+          <img src="zounian_info_assets/news-lotus-menu.png" alt="蓮根入りの雑煮">
+          <div class="news-item__body">
+            <p class="meta"><time datetime="2026-04-16">2026.04.16</time><span>新メニュー</span></p>
+            <h3>新しい一品料理が加わりました</h3>
+            <p>季節の食材を使用した新メニューをご紹介します。</p>
+          </div>
+          <a class="news-item__arrow" href="#" aria-label="新メニューの記事を読む">→</a>
+        </article>
+        <article class="news-item">
+          <img src="zounian_info_assets/news-renovated-interior.png" alt="間接照明に照らされた和食店のカウンター席">
+          <div class="news-item__body">
+            <p class="meta"><time datetime="2026-04-08">2026.04.08</time><span>お知らせ</span></p>
+            <h3>店舗の内装をリニューアルしました。</h3>
+            <p>より落ち着いた空間でお食事を楽しんでいただけます。</p>
+          </div>
+          <a class="news-item__arrow" href="#" aria-label="店舗リニューアルの記事を読む">→</a>
+        </article>
+        <article class="news-item">
+          <img src="zounian_info_assets/news-media-magazine.png" alt="木製テーブル上の雑誌掲載イメージ">
+          <div class="news-item__body">
+            <p class="meta"><time datetime="2026-03-30">2026.03.30</time><span>メディア</span></p>
+            <h3>WEBメディア「料理通信」に掲載されました</h3>
+            <p>雑煮庵のこだわりや想いが紹介されています。</p>
+          </div>
+          <a class="news-item__arrow" href="#" aria-label="メディア掲載の記事を読む">→</a>
+        </article>
+        <nav class="pagination" aria-label="ページネーション">
+          <a href="#" aria-label="前のページ">‹</a>
+          <a class="pagination__current" href="#">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#" aria-label="次のページ">›</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="page-cta" aria-labelledby="cta-title">
+      <img src="zounian_info_assets/cta-zoni-lineup.png" alt="暗い木製カウンターに並んだ五つの雑煮椀">
+      <div class="page-cta__copy">
+        <h2 id="cta-title">次は、あなたの一椀を。</h2>
+        <p>お知らせで気になった雑煮や体験を、<br>ぜひ店舗で味わってみてください。</p>
+        <div class="page-cta__buttons">
+          <a class="button button--primary" href="../zounian-reserve-page/index.html">予約する</a>
+          <a class="button button--ghost" href="../_work_zounian_menu_mockup/index.html">メニューを見る <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <section class="site-footer__brand" aria-label="雑煮庵">
+        <img class="site-footer__logo" src="../zounian-top/assets/logo-zounian.png" alt="雑煮庵 ZOUNIAN">
+      </section>
+      <address class="site-footer__address">〒150-0001<br>東京都渋谷区神宮前5-1-1<br>11:00 - 22:00（L.O. 21:00）</address>
+      <nav class="site-footer__nav" aria-label="フッターナビゲーション">
+        <a href="../zounian-concept/index.html">コンセプト</a>
+        <a href="../zounian-guide-page/index.html">体験・ストーリー</a>
+        <a href="../_work_zounian_menu_mockup/index.html">メニュー</a>
+        <a href="index.html">お知らせ</a>
+        <a href="../zounian-store-page/index.html">店舗情報</a>
+      </nav>
+      <section class="site-footer__social" aria-label="SNS">
+        <p class="site-footer__social-title">Follow Us</p>
+        <ul class="site-footer__social-list">
+          <li><a class="site-footer__social-link" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"></rect><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"></circle><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"></circle></svg></a></li>
+          <li><a class="site-footer__social-link" href="#" aria-label="X"><svg class="site-footer__x-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.24 6.93 6.07-6.93Zm-1.29 19.5h2.04L6.49 3.24H4.3l13.31 17.41Z"></path></svg></a></li>
+          <li><a class="site-footer__social-link" href="#" aria-label="Facebook"><svg class="site-footer__facebook-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.4"></circle><path d="M13.4 22v-7.2h2.4l.5-3.1h-2.9V9.7c0-.9.4-1.7 1.8-1.7h1.3V5.3s-1.2-.2-2.4-.2c-2.4 0-3.9 1.4-3.9 4.1v2.5H7.6v3.1h2.6V22"></path></svg></a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="site-footer__bottom">
+      <small class="site-footer__copyright">© ZOUNIAN. All Rights Reserved.</small>
+      <p class="site-footer__policy"><a href="#">プライバシーポリシー</a><span>|</span><a href="#">利用規約</a></p>
+    </div>
+  </footer>
+  <script src="../zounian-common/shared-ui.js"></script>
+</body>
+</html>
