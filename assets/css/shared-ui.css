@@ -79,6 +79,28 @@
   letter-spacing: 0.08em;
 }
 
+.site-header__nav.is-open,
+.global-nav.is-open {
+  position: absolute;
+  top: 100%;
+  right: max(20px, calc((100vw - var(--zounian-container)) / 2));
+  left: max(20px, calc((100vw - var(--zounian-container)) / 2));
+  z-index: 30;
+  display: grid;
+  gap: 0;
+  padding: 14px 20px;
+  background: rgba(247, 243, 238, 0.96);
+  border: 1px solid rgba(44, 32, 22, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 18px 34px rgba(37, 27, 19, 0.12);
+}
+
+.site-header__nav.is-open .site-header__nav-link,
+.global-nav.is-open a {
+  justify-content: flex-start;
+  padding: 12px 0;
+}
+
 .site-header__nav-link,
 .site-header__link,
 .global-nav a {

@@ -117,7 +117,8 @@ img { display: block; max-width: 100%; }
   font-size: clamp(2.62rem, 3.55vw, 3.62rem);
   line-height: 1.28;
   letter-spacing: .045em;
-  white-space: nowrap;
+  max-width: 12ch;
+  white-space: normal;
 }
 .hero p:not(.section-kicker) {
   margin: 0 0 26px;
@@ -492,6 +493,7 @@ img { display: block; max-width: 100%; }
   .hero__title {
     font-size: clamp(2.2rem, 9.6vw, 3rem);
     white-space: normal;
+    max-width: none;
   }
   .hero__visual {
     grid-column: 1;

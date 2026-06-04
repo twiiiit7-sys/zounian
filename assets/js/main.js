@@ -3,6 +3,10 @@
   const hero = document.querySelector(".hero");
   const menuButton = document.querySelector(".site-header__menu-button, .hamburger");
   const nav = document.querySelector(".site-header__nav, .global-nav");
+  const closeMenu = () => {
+    nav?.classList.remove("is-open");
+    menuButton?.setAttribute("aria-expanded", "false");
+  };
 
   if (!header) return;
 
@@ -35,9 +39,21 @@
     requestAnimationFrame(updateHeader);
   };
 
-  menuButton?.addEventListener("click", () => {
+  menuButton?.addEventListener("click", (event) => {
+    event.stopPropagation();
     const isOpen = nav?.classList.toggle("is-open") ?? false;
     menuButton.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!nav?.classList.contains("is-open")) return;
+    if (header.contains(event.target)) return;
+    closeMenu();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    closeMenu();
   });
 
   updateHeader();
