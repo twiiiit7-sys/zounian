@@ -19,7 +19,7 @@
   min-height: 86px;
   padding: 0 !important;
   color: var(--zounian-ink);
-  background: rgba(247, 243, 238, 0.26);
+  background: rgba(247, 243, 238, 0.12);
   border-bottom: 1px solid rgba(44, 32, 22, 0.05);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -36,7 +36,7 @@
 
 .site-header--scrolled,
 .site-header.is-scrolled {
-  background: rgba(247, 243, 238, 0.34);
+  background: rgba(247, 243, 238, 0.18);
 }
 
 .site-header__inner,
