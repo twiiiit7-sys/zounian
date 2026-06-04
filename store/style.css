@@ -165,9 +165,9 @@ img { display: block; max-width: 100%; }
 .gallery__photo:nth-of-type(3) { grid-column: 10 / span 3; grid-row: 1 / span 2; }
 .gallery__photo:nth-of-type(4) { grid-column: 4 / span 3; grid-row: 3 / span 2; }
 .gallery__photo:nth-of-type(5) { grid-column: 7 / span 3; grid-row: 3 / span 2; }
-.gallery__photo--tall { grid-column: 10 / span 1; grid-row: 3 / span 2; }
+.gallery__photo--tall { grid-column: 9 / span 2; grid-row: 3 / span 2; }
 .gallery__photo--tall img {
-  object-position: center 22%;
+  object-position: center 18%;
 }
 .value-card {
   z-index: 3;
