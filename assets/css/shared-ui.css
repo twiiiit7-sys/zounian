@@ -473,6 +473,7 @@ body.guide-page .site-header__reserve {
     border: 1px solid rgba(44, 32, 22, 0.08);
     border-radius: 10px;
     box-shadow: 0 16px 34px rgba(37, 27, 19, 0.12);
+    z-index: 200;
   }
 
   .site-header__nav.is-open .site-header__nav-link,

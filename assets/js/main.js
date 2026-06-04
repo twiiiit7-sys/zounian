@@ -91,7 +91,7 @@
       const isOpen = card.classList.toggle("is-open");
       card.setAttribute("aria-expanded", String(isOpen));
       answer.style.maxHeight = isOpen ? `${answer.scrollHeight}px` : "0";
-      if (icon) icon.textContent = isOpen ? "‚àí" : "Ôºã";
+      if (icon) icon.textContent = isOpen ? "Å|" : "Å{";
     };
 
     card.addEventListener("click", toggle);
@@ -157,3 +157,4 @@
 
   updateSummary();
 })();
+
