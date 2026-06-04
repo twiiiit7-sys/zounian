@@ -35,10 +35,10 @@ img { display: block; max-width: 100%; }
 .hero {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(360px, 448px) minmax(0, 1fr);
-  gap: 58px;
+  grid-template-columns: minmax(384px, 470px) minmax(0, 1fr);
+  gap: 48px;
   align-items: center;
-  padding: 30px 0 56px;
+  padding: 28px 0 56px;
 }
 .hero h1,
 .section-title,
@@ -49,8 +49,8 @@ img { display: block; max-width: 100%; }
 }
 .hero h1 {
   margin: 0 0 24px;
-  font-size: clamp(3.08rem, 4.5vw, 4.7rem);
-  line-height: 1.32;
+  font-size: clamp(2.72rem, 3.2vw, 4.2rem);
+  line-height: 1.2;
   letter-spacing: .08em;
 }
 .hero__copy {
@@ -93,7 +93,7 @@ img { display: block; max-width: 100%; }
 }
 .hero__visual img {
   width: 100%;
-  height: 462px;
+  height: 474px;
   object-fit: cover;
   object-position: center;
 }
@@ -334,10 +334,10 @@ img { display: block; max-width: 100%; }
   color: #fff;
   background:
     linear-gradient(90deg, rgba(0,0,0,.82), rgba(0,0,0,.36) 58%, rgba(0,0,0,.12)),
-    url("assets/store_cta_bowl.png") right 12% center / auto 98% no-repeat;
+    url("assets/store_cta_bowl.png") right 8% center / auto 102% no-repeat;
 }
 .page-cta__copy {
-  max-width: 520px;
+  max-width: 500px;
 }
 .page-cta h2 {
   margin: 0 0 10px;
@@ -352,14 +352,14 @@ img { display: block; max-width: 100%; }
   .access,
   .commitment { width: min(100% - 48px, 880px); }
   .hero {
-    grid-template-columns: minmax(300px, 374px) minmax(0, 1fr);
-    gap: 34px;
+    grid-template-columns: minmax(320px, 390px) minmax(0, 1fr);
+    gap: 30px;
   }
   .intro {
     grid-template-columns: 34px minmax(300px, 360px) 1fr;
   }
   .access { grid-template-columns: 220px 1fr 308px; gap: 24px; }
-  .page-cta__bowls img { width: clamp(132px, 15vw, 164px); }
+  .page-cta__bowls img { width: clamp(140px, 16vw, 176px); }
 }
 @media (max-width: 768px) {
   body { padding-top: 76px; }
@@ -381,5 +381,5 @@ img { display: block; max-width: 100%; }
   .access { gap: 22px; }
   .store-info div { grid-template-columns: 1fr; gap: 4px; }
   .page-cta { padding: 44px 24px; }
-  .page-cta__bowls img { width: clamp(124px, 34vw, 148px); }
+  .page-cta__bowls img { width: clamp(132px, 36vw, 156px); }
 }
