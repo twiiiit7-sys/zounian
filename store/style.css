@@ -153,6 +153,7 @@ img { display: block; max-width: 100%; }
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 16px 34px rgba(54, 31, 18, .1);
+  position: relative;
 }
 .gallery__photo img {
   width: 100%;
@@ -169,8 +170,7 @@ img { display: block; max-width: 100%; }
   object-position: center 22%;
 }
 .value-card {
-  position: relative;
-  z-index: 2;
+  z-index: 3;
   padding: 28px 24px;
   border: 1px solid var(--line);
   background: rgba(255,250,242,.9);
@@ -181,7 +181,7 @@ img { display: block; max-width: 100%; }
 .value-card:nth-of-type(1),
 .value-card:nth-of-type(2),
 .value-card:nth-of-type(3) {
-  overflow: visible;
+  overflow: hidden;
 }
 .value-card__icon,
 .value-card h3,
@@ -328,8 +328,10 @@ img { display: block; max-width: 100%; }
 }
 .page-cta {
   min-height: 300px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
+  gap: 26px;
   padding: 54px max(48px, calc((100vw - 1280px) / 2));
   color: #fff;
   background:
@@ -380,6 +382,10 @@ img { display: block; max-width: 100%; }
   .value-card { grid-column: auto !important; grid-row: auto !important; transform: none !important; }
   .access { gap: 22px; }
   .store-info div { grid-template-columns: 1fr; gap: 4px; }
-  .page-cta { padding: 44px 24px; }
+  .page-cta {
+    grid-template-columns: 1fr;
+    padding: 44px 24px;
+  }
+  .page-cta__copy { max-width: none; }
   .page-cta__bowls img { width: clamp(132px, 36vw, 156px); }
 }
