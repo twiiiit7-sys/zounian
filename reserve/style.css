@@ -34,12 +34,16 @@ img { display: block; max-width: 100%; }
 button, input, textarea { font: inherit; }
 .hero {
   display: grid;
-  grid-template-columns: .75fr 1.25fr;
-  gap: 70px;
+  grid-template-columns: minmax(460px, .94fr) minmax(560px, 1.06fr);
+  gap: 56px;
   align-items: center;
   width: min(1320px, calc(100% - 96px));
   margin: 0 auto;
   padding: 46px 0 50px;
+}
+
+.hero__copy {
+  max-width: 540px;
 }
 .section-kicker {
   margin: 0 0 14px;
@@ -64,14 +68,18 @@ button, input, textarea { font: inherit; }
 .hero h1 {
   margin: 0 0 24px;
   font-size: clamp(3.4rem, 5.6vw, 5.8rem);
-  line-height: 1.32;
+  max-width: 6.9em;
+  line-height: 1.28;
   letter-spacing: .08em;
+  text-wrap: pretty;
+  word-break: keep-all;
+  line-break: strict;
 }
 .hero p:not(.section-kicker) { margin: 0; color: #3b3029; font-weight: 500; }
 .hero__visual {
   margin: 0;
   overflow: hidden;
-  width: min(760px, 100%);
+  width: min(820px, 100%);
   height: 330px;
   justify-self: end;
   border-radius: 50%;
@@ -80,7 +88,7 @@ button, input, textarea { font: inherit; }
 .hero__visual img { width: 100%; height: 100%; object-fit: cover; object-position: center center; }
 .booking {
   display: grid;
-  grid-template-columns: 1.22fr .78fr .58fr .98fr;
+  grid-template-columns: 1.5fr .84fr .56fr .9fr;
   width: min(1440px, calc(100% - 60px));
   margin: 0 auto;
   border: 1px solid var(--line);
@@ -126,11 +134,12 @@ button, input, textarea { font: inherit; }
 .course-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 12px;
 }
 .course-card {
   position: relative;
-  padding: 10px;
+  min-width: 0;
+  padding: 10px 12px 12px;
   border: 1px solid var(--line);
   border-radius: 10px;
   background: rgba(255,255,255,.34);
@@ -158,23 +167,42 @@ button, input, textarea { font: inherit; }
 }
 .course-card > img {
   width: 100%;
-  height: 120px;
-  margin-bottom: 12px;
+  height: 142px;
+  margin-bottom: 14px;
   object-fit: cover;
   border-radius: 7px;
 }
-.course-card strong { display: block; margin-bottom: 6px; font-size: 1rem; }
+.course-card strong {
+  display: block;
+  min-height: 3.2em;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+.course-card p {
+  min-height: 4.6em;
+  line-height: 1.78;
+}
 .course-card span {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 8px;
   align-items: center;
-  margin-top: 12px;
+  margin-top: 16px;
   color: #4d4038;
   font-size: .75rem;
+  line-height: 1.6;
 }
 .course-card span img { width: 16px; height: 16px; }
-.course-card b { margin-left: auto; color: #35251f; font-size: 1rem; }
+.course-card b {
+  margin-left: auto;
+  white-space: nowrap;
+  color: #35251f;
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1;
+}
 .course-card small { margin-left: 2px; font-size: .64rem; font-weight: 400; }
 .text-link {
   display: inline-flex;
@@ -314,8 +342,18 @@ textarea:focus { outline: 1px solid rgba(141,17,22,.48); }
 .confirm-note { color: #6d2a24 !important; font-size: .75rem !important; }
 
 @media (max-width: 1180px) {
+  .hero {
+    grid-template-columns: minmax(380px, .92fr) minmax(460px, 1.08fr);
+    gap: 36px;
+  }
+
+  .hero__copy {
+    max-width: 500px;
+  }
+
   .booking {
     width: min(100% - 40px, 1120px);
+    grid-template-columns: 1.36fr .84fr .6fr .92fr;
   }
 }
 @media (max-width: 768px) {
