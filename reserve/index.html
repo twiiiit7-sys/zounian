@@ -46,7 +46,7 @@
       </figure>
     </section>
 
-    <form class="booking" id="reservation">
+    <form class="booking" id="reservation" novalidate>
       <section class="booking__step booking__step--course" aria-labelledby="course-title">
         <div class="step-head"><span>01</span><div><h2 id="course-title">コースを選ぶ</h2><p>お好みの体験コースをお選びください。</p></div></div>
         <div class="course-list">
@@ -109,7 +109,7 @@
         <img class="summary-image" src="assets/reservation-summary-room.png" alt="和モダンの個室席">
         <dl class="summary-list">
           <div><dt>コース</dt><dd id="summaryCourse">季節の雑煮コース</dd></div>
-          <div><dt>日時</dt><dd>2026年12月12日（金）17:00</dd></div>
+          <div><dt>日時</dt><dd id="summaryDateTime">2026年12月12日（金）17:00</dd></div>
           <div><dt>人数</dt><dd><span id="summaryGuests">2</span>名様</dd></div>
           <div><dt>合計料金</dt><dd class="summary-list__price">¥<span id="summaryPrice">17,600</span><small>（税込）</small></dd></div>
         </dl>
@@ -118,16 +118,17 @@
       <section class="booking__step booking__step--form" aria-labelledby="form-title">
         <div class="step-head"><span>05</span><div><h2 id="form-title">お客様情報の入力</h2><p>ご連絡先をご入力ください。</p></div></div>
         <div class="guest-form">
-          <label>お名前<input type="text" placeholder="例）山田 太郎"></label>
-          <label>メールアドレス<input type="email" placeholder="例）yamada@example.com"></label>
-          <label>電話番号<input type="tel" placeholder="例）090-1234-5678"></label>
-          <label>ご要望・アレルギーなど（任意）<textarea placeholder="ご要望・アレルギーがありましたらご記入ください"></textarea></label>
+          <label>お名前<input type="text" name="name" placeholder="例）山田 太郎" required></label>
+          <label>メールアドレス<input type="email" name="email" placeholder="例）yamada@example.com" required></label>
+          <label>電話番号<input type="tel" name="phone" placeholder="例）090-1234-5678" required></label>
+          <label>ご要望・アレルギーなど（任意）<textarea name="note" placeholder="ご要望・アレルギーがありましたらご記入ください"></textarea></label>
         </div>
       </section>
 
       <section class="booking__step booking__step--confirm" aria-labelledby="confirm-title">
         <div class="step-head"><span>06</span><div><h2 id="confirm-title">予約を確定する</h2><p>内容をご確認のうえ、この内容で予約するボタンを押してください。</p></div></div>
-        <button class="submit-button" type="button">この内容で予約する</button>
+        <p class="form-status" aria-live="polite"></p>
+        <button class="submit-button" type="submit">この内容で予約する</button>
         <p class="confirm-note">※ 予約確定後、確認メールをお送りします。<br>※ キャンセルポリシーは店舗情報ページをご確認ください。</p>
       </section>
     </form>
@@ -160,7 +161,10 @@
       <p class="site-footer__policy"><a href="../privacy/">プライバシーポリシー</a><span>|</span><a href="../terms/">利用規約</a></p>
     </div>
   </footer>
-  <script src="../assets/js/main.js?v=20260604"></script>
+  <script src="../assets/js/site-config.js"></script>
+  <script src="../assets/js/api-client.js"></script>
+  <script src="script.js?v=20260605"></script>
+  <script src="../assets/js/main.js?v=20260605"></script>
 </body>
 </html>
 

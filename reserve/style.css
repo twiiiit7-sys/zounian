@@ -363,6 +363,23 @@ textarea:focus { outline: 1px solid rgba(141,17,22,.48); }
   font-weight: 700;
   cursor: pointer;
 }
+.submit-button:disabled {
+  opacity: .72;
+  cursor: wait;
+}
+.form-status {
+  min-height: 1.5em;
+  margin: 0;
+  text-align: center;
+  font-size: .86rem;
+  font-weight: 700;
+}
+.form-status.is-success {
+  color: #7f0b10;
+}
+.form-status.is-error {
+  color: #a22d1b;
+}
 .confirm-note { color: #6d2a24 !important; font-size: .75rem !important; }
 
 @media (max-width: 1180px) {

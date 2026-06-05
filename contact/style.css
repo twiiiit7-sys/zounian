@@ -230,6 +230,12 @@ textarea:focus {
   text-align: center;
   font-size: .84rem;
 }
+.contact-form__message.is-success {
+  color: #7f0b10;
+}
+.contact-form__message.is-error {
+  color: #a22d1b;
+}
 .contact-form__submit,
 .button {
   display: inline-grid;
@@ -249,6 +255,10 @@ textarea:focus {
   background: linear-gradient(180deg, #96151c, #7f0b10);
   box-shadow: 0 6px 12px rgba(142,14,20,.13);
   cursor: pointer;
+}
+.contact-form__submit:disabled {
+  opacity: .72;
+  cursor: wait;
 }
 .button--primary {
   color: #fff;
