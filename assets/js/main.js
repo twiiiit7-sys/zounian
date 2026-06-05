@@ -8,6 +8,14 @@
     menuButton?.setAttribute("aria-expanded", "false");
   };
 
+  if (menuButton && nav && !nav.id) {
+    nav.id = "site-header-menu";
+  }
+
+  if (menuButton && nav) {
+    menuButton.setAttribute("aria-controls", nav.id);
+  }
+
   if (!header) return;
 
   let lastScrollY = window.scrollY;
@@ -43,6 +51,12 @@
     event.stopPropagation();
     const isOpen = nav?.classList.toggle("is-open") ?? false;
     menuButton.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  nav?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      closeMenu();
+    });
   });
 
   document.addEventListener("click", (event) => {
@@ -91,7 +105,7 @@
       const isOpen = card.classList.toggle("is-open");
       card.setAttribute("aria-expanded", String(isOpen));
       answer.style.maxHeight = isOpen ? `${answer.scrollHeight}px` : "0";
-      if (icon) icon.textContent = isOpen ? "Å|" : "Å{";
+      if (icon) icon.textContent = isOpen ? "-" : "+";
     };
 
     card.addEventListener("click", toggle);
@@ -157,4 +171,5 @@
 
   updateSummary();
 })();
+
 
