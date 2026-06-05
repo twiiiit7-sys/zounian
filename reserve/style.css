@@ -186,7 +186,7 @@ button, input, textarea { font: inherit; }
 }
 .course-card span {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr;
   column-gap: 6px;
   row-gap: 4px;
   align-items: center;
@@ -195,12 +195,22 @@ button, input, textarea { font: inherit; }
   font-size: .72rem;
   line-height: 1.45;
 }
-.course-card span img { width: 15px; height: 15px; }
+.course-card span img {
+  grid-column: 1;
+  grid-row: 1;
+  width: 15px;
+  height: 15px;
+}
+.course-card span > :not(img):not(b) {
+  grid-column: 2;
+  grid-row: 1;
+}
 .course-card b {
-  margin-left: auto;
-  grid-column: 3;
-  grid-row: 1 / span 2;
-  align-self: center;
+  margin-left: 0;
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  justify-self: start;
+  align-self: start;
   white-space: nowrap;
   color: #35251f;
   font-size: 1.24rem;
