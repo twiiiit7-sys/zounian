@@ -81,7 +81,7 @@ app.post("/api/reservations", async (req, res, next) => {
     ) {
       return res.status(400).json({
         ok: false,
-        message: "予約内容に不足または不正な項目があります。"
+        message: "Invalid reservation payload."
       });
     }
 
@@ -101,7 +101,7 @@ app.post("/api/reservations", async (req, res, next) => {
 
     return res.status(201).json({
       ok: true,
-      message: "予約内容を受け付けました。",
+      message: "Reservation received.",
       reservationId: record.id
     });
   } catch (error) {
@@ -121,7 +121,7 @@ app.post("/api/contact", async (req, res, next) => {
     ) {
       return res.status(400).json({
         ok: false,
-        message: "お問い合わせ内容に不足または不正な項目があります。"
+        message: "Invalid contact payload."
       });
     }
 
@@ -138,7 +138,7 @@ app.post("/api/contact", async (req, res, next) => {
 
     return res.status(201).json({
       ok: true,
-      message: "お問い合わせを受け付けました。",
+      message: "Contact message received.",
       contactId: record.id
     });
   } catch (error) {
@@ -152,13 +152,13 @@ app.use((err, _req, res, _next) => {
   if (err.message && err.message.startsWith("Origin not allowed by CORS:")) {
     return res.status(403).json({
       ok: false,
-      message: "この送信元からのアクセスは許可されていません。"
+      message: "CORS origin not allowed."
     });
   }
 
   return res.status(500).json({
     ok: false,
-    message: "サーバーでエラーが発生しました。"
+    message: "Server error."
   });
 });
 
