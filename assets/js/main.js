@@ -91,29 +91,31 @@
 
 (() => {
   document.querySelectorAll(".faq-card").forEach((card) => {
-    const answer = card.querySelector("p");
-    const icon = card.querySelector("span");
-    if (!answer) return;
-    card.setAttribute("tabindex", "0");
-    card.setAttribute("role", "button");
-    card.setAttribute("aria-expanded", "false");
-    answer.style.maxHeight = "0";
+    const trigger = card.querySelector(".faq-card__button");
+    const answer = card.querySelector(".faq-card__answer");
+    if (!trigger || !answer) return;
+    const answerInner = answer.querySelector("p");
     answer.style.overflow = "hidden";
+    answer.style.maxHeight = "0";
     answer.style.transition = "max-height .25s ease";
+    answer.hidden = true;
 
     const toggle = () => {
       const isOpen = card.classList.toggle("is-open");
-      card.setAttribute("aria-expanded", String(isOpen));
-      answer.style.maxHeight = isOpen ? `${answer.scrollHeight}px` : "0";
-      if (icon) icon.textContent = isOpen ? "-" : "+";
+      trigger.setAttribute("aria-expanded", String(isOpen));
+      answer.hidden = false;
+      const expandedHeight = answer.scrollHeight;
+      answer.style.maxHeight = isOpen ? `${expandedHeight}px` : "0";
+      if (!isOpen) {
+        window.setTimeout(() => {
+          if (!card.classList.contains("is-open")) answer.hidden = true;
+        }, 250);
+      } else if (answerInner) {
+        answer.style.maxHeight = `${answer.scrollHeight}px`;
+      }
     };
 
-    card.addEventListener("click", toggle);
-    card.addEventListener("keydown", (event) => {
-      if (event.key !== "Enter" && event.key !== " ") return;
-      event.preventDefault();
-      toggle();
-    });
+    trigger.addEventListener("click", toggle);
   });
 })();
 
