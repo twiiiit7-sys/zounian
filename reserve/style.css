@@ -323,7 +323,7 @@ button, input, textarea { font: inherit; }
 .summary-list__price small { margin-left: 4px; font-family: var(--sans); font-size: .72rem; }
 .guest-form {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) minmax(0, 1fr) minmax(0, 1.1fr);
   gap: 22px;
 }
 .guest-form label {
