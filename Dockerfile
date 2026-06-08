@@ -9,7 +9,6 @@ FROM eclipse-temurin:17-jre AS runtime
 WORKDIR /app
 
 COPY --from=build /app/target/*.jar /app/app.jar
-COPY --from=build /app /app
 
 EXPOSE 10000
-CMD ["java", "-Dserver.port=10000", "-jar", "/app/app.jar"]
+CMD ["sh", "-c", "java -Dserver.port=${PORT:-10000} -jar /app/app.jar"]
