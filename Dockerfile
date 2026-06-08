@@ -10,6 +10,8 @@ WORKDIR /app
 
 COPY --from=build /app/target/*.jar /app/app.jar
 COPY --from=build /app/index.html /app/index.html
+COPY --from=build /app/style.css /app/style.css
+COPY --from=build /app/script.js /app/script.js
 COPY --from=build /app/assets /app/assets
 COPY --from=build /app/concept /app/concept
 COPY --from=build /app/contact /app/contact
