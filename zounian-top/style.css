@@ -397,9 +397,20 @@ button {
   inset: 0;
   z-index: 2;
   border-radius: inherit;
-  background: center / cover no-repeat url("assets/zounian-hero-autumn.png");
   opacity: 0;
-  animation: heroFadeSeasonal 14s ease-in-out infinite;
+  animation-duration: 21s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.hero__seasonal-layer--autumn {
+  background: center / cover no-repeat url("assets/zounian-hero-autumn.png");
+  animation-name: heroFadeAutumn;
+}
+
+.hero__seasonal-layer--spring {
+  background: center / cover no-repeat url("assets/zounian-hero-spring.png");
+  animation-name: heroFadeSpring;
 }
 
 .hero__scroll {
@@ -425,14 +436,31 @@ button {
   content: "";
 }
 
-@keyframes heroFadeSeasonal {
+@keyframes heroFadeAutumn {
   0%,
-  42% {
+  26% {
     opacity: 0;
   }
 
-  50%,
-  92% {
+  33%,
+  60% {
+    opacity: 1;
+  }
+
+  67%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes heroFadeSpring {
+  0%,
+  59% {
+    opacity: 0;
+  }
+
+  66%,
+  93% {
     opacity: 1;
   }
 
