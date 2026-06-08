@@ -1,5 +1,5 @@
-// Replace this value with your actual Render URL after deployment.
-const RENDER_API_BASE_URL = "https://your-render-service.onrender.com";
+// Replace this value if the backend URL changes.
+const RENDER_API_BASE_URL = "https://zounian.onrender.com";
 
 window.ZOUNIAN_CONFIG = {
   apiBaseUrl:
