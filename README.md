@@ -1,6 +1,6 @@
-﻿# Zounian Web Site
+# Zounian Web Site
 
-This repository contains the front end for the Zounian site plus a minimal Node/Express backend for Render.
+This repository contains the Zounian frontend and a small Spring Boot API that can run on Render.
 
 ## What is included
 
@@ -8,22 +8,15 @@ This repository contains the front end for the Zounian site plus a minimal Node/
 - `contact/` contact page
 - `assets/js/site-config.js` frontend API base URL switch
 - `assets/js/api-client.js` shared `fetch` helper
-- `server.js` API server
-- `render.yaml` Render service config
+- `src/main/java/com/example/demo/api/` reservation and contact API endpoints
 - `data/` JSON persistence directory
 
 ## Render setup
 
 1. Push the repository to GitHub.
-2. Create a new Render `Web Service` from the repo.
-3. Use these commands.
-
-```bash
-Build Command: npm install
-Start Command: npm start
-```
-
-4. Set environment variables on Render.
+2. Create or redeploy the Render service as a Docker web service.
+3. Use the Dockerfile at the repository root.
+4. Set these environment variables on Render.
 
 ```env
 FRONTEND_ORIGINS=https://twiiiit7-sys.github.io
@@ -32,30 +25,25 @@ PORT=10000
 ```
 
 5. Deploy the service.
-6. Open `assets/js/site-config.js` and replace:
+6. Set `assets/js/site-config.js` so the frontend points to the Render public URL.
 
 ```js
-const RENDER_API_BASE_URL = "https://your-render-service.onrender.com";
+const RENDER_API_BASE_URL = "https://zounian.onrender.com";
 ```
-
-with your real Render URL.
 
 ## Local run
 
 ```bash
-npm install
-npm start
+./mvnw.cmd test
 ```
 
-Health check:
-
-- `http://localhost:3000/api/health`
+For local browser testing, run the Spring Boot app and open the site from the same service or a local static server setup.
 
 ## API
 
+- `GET /api/health`
 - `POST /api/reservations`
 - `POST /api/contact`
-- `GET /api/health`
 
 ## Notes
 

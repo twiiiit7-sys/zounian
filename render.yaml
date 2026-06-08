@@ -1,12 +1,9 @@
 services:
   - type: web
-    name: zounian-api
-    runtime: node
-    buildCommand: npm install
-    startCommand: npm start
+    name: zounian
+    runtime: docker
+    plan: free
     envVars:
-      - key: NODE_VERSION
-        value: 20
       - key: FRONTEND_ORIGINS
         value: https://twiiiit7-sys.github.io
       - key: DATA_DIR
