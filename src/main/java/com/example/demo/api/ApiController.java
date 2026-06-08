@@ -103,6 +103,7 @@ public class ApiController {
     return request != null
         && StringUtils.hasText(request.name())
         && isValidEmail(request.email())
+        && StringUtils.hasText(request.category())
         && StringUtils.hasText(request.subject())
         && StringUtils.hasText(request.message());
   }
