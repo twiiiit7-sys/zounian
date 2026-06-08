@@ -5,7 +5,7 @@
   const nav = document.querySelector(".site-header__nav, .global-nav");
   const closeMenu = () => {
     nav?.classList.remove("is-open");
-    menuButton?.setAttribute("aria-expanded", "false");
+    if (menuButton) menuButton.setAttribute("aria-expanded", "false");
   };
 
   if (menuButton && nav && !nav.id) {
@@ -49,7 +49,8 @@
 
   menuButton?.addEventListener("click", (event) => {
     event.stopPropagation();
-    const isOpen = nav?.classList.toggle("is-open") ?? false;
+    if (!nav) return;
+    const isOpen = nav.classList.toggle("is-open");
     menuButton.setAttribute("aria-expanded", String(isOpen));
   });
 

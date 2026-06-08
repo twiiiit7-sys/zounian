@@ -9,22 +9,20 @@ const plus = document.getElementById("plus");
 const minus = document.getElementById("minus");
 const statusMessage = document.querySelector(".form-status");
 const submitButton = document.querySelector(".submit-button");
+const calendarHead = document.querySelector(".calendar__head strong");
+const calendarGrid = document.querySelector(".calendar__grid");
+const calendarPrev = document.querySelector(".calendar__head button:first-child");
+const calendarNext = document.querySelector(".calendar__head button:last-child");
 
 let selectedPrice = Number(document.querySelector(".course-card.is-selected")?.dataset.price || 8800);
 let selectedCourse = document.querySelector(".course-card.is-selected")?.dataset.course || "";
 let guests = Number(guestCount?.textContent || 2);
-let selectedDate = "";
 let selectedTime = document.querySelector(".time-list .is-selected")?.textContent?.trim() || "";
+let currentCalendarMonth = null;
+let selectedCalendarDate = null;
+let selectedDate = "";
 
-const weekdayMap = [
-  "\u65e5",
-  "\u6708",
-  "\u706b",
-  "\u6c34",
-  "\u6728",
-  "\u91d1",
-  "\u571f"
-];
+const weekdayMap = ["\u65e5", "\u6708", "\u706b", "\u6c34", "\u6728", "\u91d1", "\u571f"];
 
 const messages = {
   selectCourseDateTime: "\u30b3\u30fc\u30b9\u30fb\u65e5\u4ed8\u30fb\u6642\u9593\u3092\u9078\u629e\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
@@ -43,19 +41,83 @@ const setStatus = (message, type = "") => {
   if (type) statusMessage.classList.add(type);
 };
 
+const parseCalendarMonth = (value) => {
+  const match = String(value || "").match(/(\d{4})\u5e74(\d{1,2})\u6708/);
+  if (!match) return new Date(2026, 11, 1);
+  return new Date(Number(match[1]), Number(match[2]) - 1, 1);
+};
+
+const formatMonthTitle = (date) => `${date.getFullYear()}\u5e74${date.getMonth() + 1}\u6708`;
+
+const isSameDay = (left, right) =>
+  !!left &&
+  !!right &&
+  left.getFullYear() === right.getFullYear() &&
+  left.getMonth() === right.getMonth() &&
+  left.getDate() === right.getDate();
+
+const renderCalendar = () => {
+  if (!calendarHead || !calendarGrid || !currentCalendarMonth) return;
+
+  calendarHead.textContent = formatMonthTitle(currentCalendarMonth);
+  calendarGrid.innerHTML = "";
+
+  ["\u65e5", "\u6708", "\u706b", "\u6c34", "\u6728", "\u91d1", "\u571f"].forEach((label) => {
+    const span = document.createElement("span");
+    span.textContent = label;
+    calendarGrid.appendChild(span);
+  });
+
+  const year = currentCalendarMonth.getFullYear();
+  const month = currentCalendarMonth.getMonth();
+  const firstDay = new Date(year, month, 1);
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const startOffset = firstDay.getDay();
+  const prevMonthDays = new Date(year, month, 0).getDate();
+
+  for (let i = startOffset - 1; i >= 0; i -= 1) {
+    const day = prevMonthDays - i;
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = String(day);
+    button.classList.add("is-muted");
+    calendarGrid.appendChild(button);
+  }
+
+  for (let day = 1; day <= daysInMonth; day += 1) {
+    const date = new Date(year, month, day);
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = String(day);
+
+    if (isSameDay(date, selectedCalendarDate)) {
+      button.classList.add("is-selected");
+    }
+
+    button.addEventListener("click", () => {
+      selectedCalendarDate = date;
+      calendarGrid.querySelectorAll("button").forEach((item) => item.classList.remove("is-selected"));
+      button.classList.add("is-selected");
+      updateSummary();
+    });
+
+    calendarGrid.appendChild(button);
+  }
+
+  while (calendarGrid.children.length % 7 !== 0) {
+    const day = calendarGrid.querySelectorAll("button").length - startOffset - daysInMonth + 1;
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = String(day);
+    button.classList.add("is-muted");
+    calendarGrid.appendChild(button);
+  }
+};
+
 const buildSelectedDate = () => {
-  const calendarTitle = document.querySelector(".calendar__head strong")?.textContent?.trim() || "";
-  const selectedDayText = document.querySelector(".calendar__grid button.is-selected")?.textContent?.trim() || "";
-  const match = calendarTitle.match(/(\d{4})\u5e74(\d{1,2})\u6708/);
-  const day = Number(selectedDayText);
-
-  if (!match || !day) return "";
-
-  const year = Number(match[1]);
-  const month = Number(match[2]);
-  const date = new Date(year, month - 1, day);
-  const weekday = weekdayMap[date.getDay()];
-  return `${year}\u5e74${month}\u6708${day}\u65e5\uff08${weekday}\uff09`;
+  if (!selectedCalendarDate) return "";
+  const weekday = weekdayMap[selectedCalendarDate.getDay()];
+  return `${selectedCalendarDate.getFullYear()}\u5e74${selectedCalendarDate.getMonth() + 1}\u6708${selectedCalendarDate.getDate()}\u65e5\uff08${weekday}\uff09`;
 };
 
 const updateSummary = () => {
@@ -68,15 +130,9 @@ const updateSummary = () => {
 };
 
 const validateReservation = (payload) => {
-  if (!payload.course || !payload.date || !payload.time) {
-    return messages.selectCourseDateTime;
-  }
-  if (!payload.name || !payload.email || !payload.phone) {
-    return messages.fillRequired;
-  }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) {
-    return messages.invalidEmail;
-  }
+  if (!payload.course || !payload.date || !payload.time) return messages.selectCourseDateTime;
+  if (!payload.name || !payload.email || !payload.phone) return messages.fillRequired;
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) return messages.invalidEmail;
   return "";
 };
 
@@ -100,15 +156,6 @@ minus?.addEventListener("click", () => {
   updateSummary();
 });
 
-document.querySelectorAll(".calendar__grid button").forEach((button) => {
-  button.addEventListener("click", () => {
-    if (button.classList.contains("is-muted")) return;
-    document.querySelectorAll(".calendar__grid button").forEach((item) => item.classList.remove("is-selected"));
-    button.classList.add("is-selected");
-    updateSummary();
-  });
-});
-
 document.querySelectorAll(".time-list button").forEach((button) => {
   button.addEventListener("click", () => {
     document.querySelectorAll(".time-list button").forEach((item) => item.classList.remove("is-selected"));
@@ -116,6 +163,20 @@ document.querySelectorAll(".time-list button").forEach((button) => {
     selectedTime = button.textContent.trim();
     updateSummary();
   });
+});
+
+calendarPrev?.addEventListener("click", () => {
+  currentCalendarMonth = new Date(currentCalendarMonth.getFullYear(), currentCalendarMonth.getMonth() - 1, 1);
+  selectedCalendarDate = new Date(currentCalendarMonth.getFullYear(), currentCalendarMonth.getMonth(), 1);
+  renderCalendar();
+  updateSummary();
+});
+
+calendarNext?.addEventListener("click", () => {
+  currentCalendarMonth = new Date(currentCalendarMonth.getFullYear(), currentCalendarMonth.getMonth() + 1, 1);
+  selectedCalendarDate = new Date(currentCalendarMonth.getFullYear(), currentCalendarMonth.getMonth(), 1);
+  renderCalendar();
+  updateSummary();
 });
 
 reservationForm?.addEventListener("submit", async (event) => {
@@ -155,6 +216,8 @@ reservationForm?.addEventListener("submit", async (event) => {
     selectedCourse = document.querySelector(".course-card.is-selected")?.dataset.course || selectedCourse;
     selectedPrice = Number(document.querySelector(".course-card.is-selected")?.dataset.price || selectedPrice);
     selectedTime = document.querySelector(".time-list .is-selected")?.textContent?.trim() || selectedTime;
+    selectedCalendarDate = new Date(currentCalendarMonth.getFullYear(), currentCalendarMonth.getMonth(), 12);
+    renderCalendar();
     updateSummary();
   } catch (error) {
     setStatus(error.message || messages.failed, "is-error");
@@ -163,4 +226,7 @@ reservationForm?.addEventListener("submit", async (event) => {
   }
 });
 
+currentCalendarMonth = parseCalendarMonth(calendarHead?.textContent || "2026\u5e7412\u6708");
+selectedCalendarDate = new Date(currentCalendarMonth.getFullYear(), currentCalendarMonth.getMonth(), 12);
+renderCalendar();
 updateSummary();
