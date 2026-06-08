@@ -1,4 +1,50 @@
 (() => {
+  const hero = document.querySelector("[data-hero]");
+  const layers = hero ? hero.querySelectorAll("[data-parallax-layer]") : [];
+
+  if (!hero || !layers.length || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  let frame = 0;
+  let pointerX = 0;
+  let pointerY = 0;
+
+  const updateLayers = () => {
+    layers.forEach((layer) => {
+      const speed = Number(layer.getAttribute("data-parallax-speed") || 0);
+      const offsetX = pointerX * speed;
+      const offsetY = pointerY * speed;
+      layer.style.transform = `translate3d(${offsetX}px, ${offsetY}px, 0)`;
+    });
+    frame = 0;
+  };
+
+  const queueUpdate = () => {
+    if (frame) {
+      return;
+    }
+
+    frame = window.requestAnimationFrame(updateLayers);
+  };
+
+  hero.addEventListener("pointermove", (event) => {
+    const rect = hero.getBoundingClientRect();
+    const relativeX = (event.clientX - rect.left) / rect.width - 0.5;
+    const relativeY = (event.clientY - rect.top) / rect.height - 0.5;
+    pointerX = relativeX * 18;
+    pointerY = relativeY * 14;
+    queueUpdate();
+  });
+
+  hero.addEventListener("pointerleave", () => {
+    pointerX = 0;
+    pointerY = 0;
+    queueUpdate();
+  });
+})();
+
+(() => {
   const carousel = document.querySelector("[data-menu-carousel]");
 
   if (!carousel) {

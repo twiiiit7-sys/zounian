@@ -7,8 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&family=Shippori+Mincho:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260608">
-  <link rel="stylesheet" href="../assets/css/shared-ui.css?v=20260608">
+  <link rel="stylesheet" href="style.css?v=20260608b">
+  <link rel="stylesheet" href="../assets/css/shared-ui.css?v=20260608b">
 </head>
 <body>
   <header class="site-header">
@@ -36,10 +36,11 @@
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero" aria-labelledby="hero-title" data-hero>
       <p class="hero__scroll">SCROLL</p>
       <div class="hero__inner layout-container">
-        <div class="hero__content">
+        <div class="hero__content" data-parallax-layer data-parallax-speed="0.18">
+          <p class="hero__eyebrow">Seasonal Zoni Experience</p>
           <h1 class="hero__title" id="hero-title">一椀で、<br>日本を旅する。</h1>
           <p class="hero__lead">
             地域ごとの雑煮の違いや、出汁・餅・具材・器・季節感など、<br>
@@ -50,7 +51,12 @@
             <a class="button button--outline" href="../menu/">メニューを見る <span aria-hidden="true">→</span></a>
           </div>
         </div>
-        <figure class="hero__visual">
+        <figure class="hero__visual" data-parallax-layer data-parallax-speed="-0.12">
+          <span class="hero__ambient hero__ambient--gold" aria-hidden="true"></span>
+          <span class="hero__ambient hero__ambient--glass" aria-hidden="true"></span>
+          <span class="hero__steam hero__steam--left" aria-hidden="true"></span>
+          <span class="hero__steam hero__steam--center" aria-hidden="true"></span>
+          <span class="hero__steam hero__steam--right" aria-hidden="true"></span>
           <img class="hero__image" src="assets/hero-air-fade.png" alt="湯気の立つ雑煮">
         </figure>
       </div>
@@ -279,7 +285,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20260608"></script>
-  <script src="../assets/js/main.js?v=20260608"></script>
+  <script src="script.js?v=20260608b"></script>
+  <script src="../assets/js/main.js?v=20260608b"></script>
 </body>
 </html>
